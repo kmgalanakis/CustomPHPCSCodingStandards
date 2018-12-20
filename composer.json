@@ -1,0 +1,30 @@
+{
+	"name": "kmgalanakis/phpcs-coding-standards",
+	"require": {
+		"wp-coding-standards/wpcs": "^1.2",
+		"slowprog/composer-copy-file": "^0.2.1"
+	},
+	"authors": [
+		{
+			"name": "Konstantinos Galanakis",
+			"email": "kmgalanakis@gmail.com"
+		}
+	],
+	"scripts": {
+		"post-install-cmd": [
+			"SlowProg\\CopyFile\\ScriptHandler::copy"
+		],
+		"post-update-cmd": [
+			"SlowProg\\CopyFile\\ScriptHandler::copy"
+		]
+	},
+	"extra": {
+		"copy-file": {
+			"vendor/wp-coding-standards/wpcs/WordPress": "standards/WordPress",
+			"vendor/wp-coding-standards/wpcs/WordPress-Core": "standards/WordPress-Core",
+			"vendor/wp-coding-standards/wpcs/WordPress-Docs": "standards/WordPress-Docs",
+			"vendor/wp-coding-standards/wpcs/WordPress-Extra": "standards/WordPress-Extra",
+			"vendor/wp-coding-standards/wpcs/WordPress-VIP": "standards/WordPress-VIP"
+		}
+	}
+}
